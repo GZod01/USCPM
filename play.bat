@@ -14,8 +14,8 @@ else (
         start "" ".\uscpm.html"
     ) else (
         msg "%USERNAME%" "Sorry, your computer can't access to internet and the USCPM file doesn't exist, if the error persist create an issue in the github: https://github.com/gzod01/uscpm"
-        # echo "x=msgbox("Sorry, your computer can't access to internet and the USCPM file doesn't exist, if the error persist create an issue in the github: https://github.com/gzod01/uscpm", Button+Icon, "ERROR USCPM")" > .\message.vbs
-        # .\message.vbs
-        # del .\message.vbs
+        rem echo "x=msgbox("Sorry, your computer can't access to internet and the USCPM file doesn't exist, if the error persist create an issue in the github: https://github.com/gzod01/uscpm", Button+Icon, "ERROR USCPM")" > .\message.vbs
+        rem .\message.vbs
+        rem del .\message.vbs
     )
 )
