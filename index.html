@@ -1965,9 +1965,11 @@
                     console.log(`copy to your clipboard: ${JSON.stringify(levels)}`)
                 }
                 function exportlevel(){
-                    document.body.innnerHTML = `<pre>${JSON.stringify(levels)}</pre><br>Reload for return on USCPM`
+                    document.body.remove()
+                    document.body.innnerHTML = `<pre>${JSON.stringify(t)}</pre><br>Reload for return on USCPM`
                 }
                 function importlevel(){
+                    document.body.remove()
                     document.body.innerHTML = `<textarea id=thejson>your JSON level here</textarea><br><button onclick="function(){
                         levels[0]= document.getElementById('thejson').innerHTML;
                         localStorage.setItem('niveau',JSON.stringify(levels))
