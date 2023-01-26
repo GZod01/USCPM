@@ -1969,7 +1969,7 @@
                     document.body.innnerHTML = `<pre>${JSON.stringify(t)}</pre><br>Reload for return on USCPM`
                 }
                 function importlevel(){
-                    document.body.remove()
+                    document.body.removeChild()
                     document.body.innerHTML = `<textarea id=thejson>your JSON level here</textarea><br><input type=number id=nb><button onclick="function(){
                         levels[nb.value]= document.getElementById('thejson').innerHTML;
                         localStorage.setItem('niveau',JSON.stringify(levels))
