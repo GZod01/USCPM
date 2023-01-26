@@ -8,7 +8,6 @@
         <p style="color:#444;font:normal 15px arial">
             GZod01 - <a href="about.html" >About</a>
             - <button id="Savebutton">Save</button>
-            - <button onclick="copy()">Copy to share</button>
             - <button id="editthecode">Edit the level</button>
             - <button id="winthegame">WIN!</button>
             - <button id="importthegame">IMPORT shared levels</button>
@@ -1951,11 +1950,6 @@
                 function winthegame(){
                     I=true
                 }
-                function importthesavedgame(){
-                    let abcdefg = prompt('the shared levels: ')
-                    localStorage.setItem('niveau',JSON.stringify(abcdefg))
-                    localStorage.setItem('storage?', 2)
-                }
                 function copy(){
                     /*let theoutput = document.createElement('p')
                     theoutput.id = 'output'
@@ -1969,6 +1963,15 @@
                     copyText.remove()
                     theoutput.remove()*/
                     console.log(`copy to your clipboard: ${JSON.stringify(levels)}`)
+                }
+                function exportlevel(){
+                    document.body.innnerHTML = `<pre>${JSON.stringify(levels)}</pre><br>Reload for return on USCPM`
+                }
+                function importlevel(){
+                    document.body.innerHTML = `<textarea id=thejson>your JSON level here</textarea><br><button onclick="function(){
+                        levels[0]= document.getElementById('thejson').innerHTML;
+                        localStorage.setItem('niveau',JSON.stringify(levels))
+                        localStorage.setItem('storage?', 2)}">Submit</button>`
                 }
                 function getlevels(){
                     return levels
