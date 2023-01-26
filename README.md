@@ -22,4 +22,5 @@ The hash characters:
   coins: '6',
   pics: '7',
   moving-platform: '?',
+  ice: '8',
 }
