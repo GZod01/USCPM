@@ -1964,19 +1964,29 @@
                     theoutput.remove()*/
                     console.log(`copy to your clipboard: ${JSON.stringify(levels)}`)
                 }
-                function exportlevel(){
+                /*function exportlevel(){
                     document.body.remove()
                     document.body.innnerHTML = `<pre>${JSON.stringify(t)}</pre><br>Reload for return on USCPM`
-                }
-                function importlevel(){
+                }*/
+                /*function importlevel(){
                     document.body.removeChild()
                     document.body.innerHTML = `<textarea id=thejson>your JSON level here</textarea><br><input type=number id=nb><button onclick="function(){
                         levels[nb.value]= document.getElementById('thejson').innerHTML;
                         localStorage.setItem('niveau',JSON.stringify(levels))
                         localStorage.setItem('storage?', 2)}">Submit</button>`
-                }
+                }*/
                 function getlevels(){
                     return levels
+                }
+                function download(content, fileName, contentType) {
+                    var a = document.createElement("a");
+                    var file = new Blob([content], {type: contentType});
+                    a.href = URL.createObjectURL(file);
+                    a.download = fileName;
+                    a.click();
+                }
+                function exportlevel(){
+                    download(JSON.stringify(levels), 'json.txt', 'text/plain');
                 }
                 var sauvegarderbouton = document.getElementById("Savebutton");
                 sauvegarderbouton.addEventListener("click", sauvegarder);
