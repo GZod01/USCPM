@@ -59,3 +59,69 @@
         <span id="span1">Oh yeah</span>
     </body>
 </html>
+
+
+
+
+<!--
+    <html>
+    <head>
+        <title>PLAY USCPM</title>
+        <script type="text/javascript">
+ 		window.addEventListener("online", (event) => {
+      	    location="http://gzod01.fr/uscpm/"
+	      })
+            //init object globally
+            var objImage = null;
+            //var vitesse = document.getElementById('vitesseinput').value
+            vitesse = 5
+            function init() {
+                objImage = document.getElementById("span1");
+                objImage.style.position = "relative";
+                objImage.style.left = "0%";
+                objImage.style.top = "0%";
+            }
+            function getKeyAndMove(e) {
+                var key_code = e.which || e.keyCode;
+                switch (key_code) {
+                    case 37: //left arrow key
+                        moveLeft();
+                        break;
+                    case 38: //Up arrow key
+                        moveUp();
+                        break;
+                    case 39: //right arrow key
+                        moveRight();
+                        break;
+                    case 40: //down arrow key
+                        moveDown();
+                        break;
+                }
+            }
+            function moveLeft() {
+                if (objImage.style.left==='0%'){objImage.style.left='100%'}
+                objImage.style.left = parseInt(objImage.style.left) - vitesse + "%";
+            }
+            function moveUp() {
+                if (objImage.style.top==='0%'){objImage.style.top='100%'}
+                objImage.style.top = parseInt(objImage.style.top) - vitesse + "%";
+            }
+            function moveRight() {
+                if (objImage.style.left==='100%'){objImage.style.left='0%'}
+                objImage.style.left = parseInt(objImage.style.left) + vitesse + "%";
+            }
+            function moveDown() {
+                if (objImage.style.top==='100%'){objImage.style.top='0%'}
+                objImage.style.top = parseInt(objImage.style.top) + vitesse + "%";
+            }
+            window.onload = init;
+	    	
+        </script>
+    </head>
+
+    <body onkeydown="getKeyAndMove(event)">
+        <h1>Si tu as une connexion reseau tu sera redirigé vers <a href="http://gzod01.fr/uscpm/">USCPM</a> sinon tu appuie sur les touches pour te déplacer...</h1>
+        <span id="span1"><img style="height:50px; width:50px;"src="https://static.wikia.nocookie.net/heros/images/4/49/Bip_Bip_Infobox.png/revision/latest?cb=20200627075249&path-prefix=fr"></img></span>
+    </body>
+</html>
+-->
