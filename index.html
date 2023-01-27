@@ -11,7 +11,7 @@
             - <button id="editthecode">Edit the level</button>
             - <button id="winthegame">WIN!</button>
             - <button id="exportthegame">EXPORT levels</button>
-            - <input type="file" name="filejson" id="filejson">
+            - <input type="file" id="fs">
             - <button id="importthegame">IMPORT levels</button>
             <!-- - <button onclick="makeimport()">MakeImport</button>-->
             - using localStorage
@@ -1991,7 +1991,7 @@
                     download(JSON.stringify(localStorage), 'progression.txt', 'text/plain');
                 }
                 function importlevel(){
-                    let thefileelement = document.getElementById('filejson')
+                    let thefileelement = document.getElementById('fs')
                     let thefile = thefile.files[0]
                     if (thefile == null){
                         alert('vous devez entrer au moins un fichier')
