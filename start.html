@@ -1,29 +1,61 @@
-<span id="player" style="top: 50%;left: 50%;">
-     o 
-    /|\
-    / \
-</span>
-<script>
-    window.addEventListener("offline", (event) => {});
-onkeydown = (e,f,g) => {
-    if (e.keycode == 38){
-        player.style.top ++
-    }
-    if (e.keycode==40){
-        player.style.top --
-    }
-    if (e.keycode==37){
-        player.style.left++
-    }
-    if(e.keycode==39){
-        player.style.left--
-    }
-}
-    window.addEventListener("online", (event) => {
-        location="http://gzod01.fr/uscpm/"
-    });
-</script>
+<html>
+    <head>
+        <title>PLAY USCPM</title>
+        <script type="text/javascript">
+ 		window.addEventListener("online", (event) => {
+      	    location="http://gzod01.fr/uscpm/"
+	      })
+            //init object globally
+            var objImage = null;
+            //var vitesse = document.getElementById('vitesseinput').value
+            vitesse = 5
+            function init() {
+                objImage = document.getElementById("span1");
+                objImage.style.position = "relative";
+                objImage.style.left = "0%";
+                objImage.style.top = "0%";
+            }
+            function getKeyAndMove(e) {
+                var key_code = e.which || e.keyCode;
+                switch (key_code) {
+                    case 37: //left arrow key
+                        moveLeft();
+                        break;
+                    case 38: //Up arrow key
+                        moveUp();
+                        break;
+                    case 39: //right arrow key
+                        moveRight();
+                        break;
+                    case 40: //down arrow key
+                        moveDown();
+                        break;
+                }
+            }
+            function moveLeft() {
+                if (objImage.style.left==='0%'){objImage.style.left='100%'}
+                objImage.style.left = parseInt(objImage.style.left) - vitesse + "%";
+            }
+            function moveUp() {
+                if (objImage.style.left==='100%'){objImage.style.left='0%'}
+                if (objImage.style.top==='0%'){objImage.style.top='100%'}
+                objImage.style.top = parseInt(objImage.style.top) - vitesse + "%";
+            }
+            function moveRight() {
+                objImage.style.left = parseInt(objImage.style.left) + vitesse + "%";
+            }
+            function moveDown() {
+                if (objImage.style.top==='100%'){objImage.style.top='0%'}
+                objImage.style.top = parseInt(objImage.style.top) + vitesse + "%";
+            }
+            window.onload = init;
+	    	
+        </script>
+    </head>
 
-<!--<script>
-    //let url = 'http://gzod01.fr/uscpm/index.html'; fetch(url).then((response) => {if (!response.ok) {throw new Error(`HTTP error: ${response.status}`);};return response.text();}).then((text) => poemDisplay.textContent = text).catch((error) => poemDisplay.textContent = `Could not fetch verse: ${error}`);
-</script>-->
+    <body onkeydown="getKeyAndMove(event)">
+        <!--<input type=number id=vitesseinput value=5>-->
+        <h1>Si tu as une connexion reseau tu sera redirigé vers <a href="http://gzod01.fr/uscpm/">USCPM</a> sinon tu appuie sur les touches pour te déplacer...</h1>
+        <span id="span1">Oh yeah</span>
+    </body>
+</html>
