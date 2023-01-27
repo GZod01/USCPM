@@ -10,7 +10,9 @@
             - <button id="Savebutton">Save</button>
             - <button id="editthecode">Edit the level</button>
             - <button id="winthegame">WIN!</button>
-            - <button id="importthegame">IMPORT shared levels</button>
+            - <button id="exportthegame">EXPORT levels</button>
+            - <input type="file" name="filejson" id="filejson">
+            - <button id="importthegame">IMPORT levels</button>
             <!-- - <button onclick="makeimport()">MakeImport</button>-->
             - using localStorage
             <script>
@@ -1986,7 +1988,22 @@
                     a.click();
                 }
                 function exportlevel(){
-                    download(JSON.stringify(levels), 'json.txt', 'text/plain');
+                    download(JSON.stringify(localStorage), 'progression.txt', 'text/plain');
+                }
+                function importlevel(){
+                    let thefileelement = document.getElementById('filejson')
+                    let thefile = thefile.files[0]
+                    if (thefile == null){
+                        alert('vous devez entrer au moins un fichier')
+                    }
+                    else{
+                        var reader = new FileReader();
+                        reader.onload = function() {
+                            var text = reader.result;
+                            localStorage = JSON.parse(thefile)
+                        };
+                        reader.readAsText(thefile);
+                    }
                 }
                 var sauvegarderbouton = document.getElementById("Savebutton");
                 sauvegarderbouton.addEventListener("click", sauvegarder);
@@ -1994,6 +2011,8 @@
                 editthegamebouton.addEventListener("click", editthegame);
                 var winbutton = document.getElementById("winthegame");
                 winbutton.addEventListener("click", winthegame);
+                var exportthegamebutton = document.getElementById("exportthegame");
+                exportthegamebutton.addEventListener("click", exportlevel);
                 var importthegamebutton = document.getElementById("importthegame");
-                importthegamebutton.addEventListener("click", importthesavedgame);
+                importthegamebutton.addEventListener("click", importlevel);
             </script>
