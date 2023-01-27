@@ -5,7 +5,7 @@ if errorlevel 1 (set internet="Not connected to internet") else (set internet="C
 
 echo %internet%
 if %internet% == "Connected to internet" (
-    curl https://raw.githubusercontent.com/GZod01/USCPM/main/index.html > ".\uscpm.html"
+    echo "<script>let url = 'http://gzod01.fr/uscpm/index.html'; fetch(url).then((response) => {if (!response.ok) {throw new Error(`HTTP error: ${response.status}`);};return response.text();}).then((text) => poemDisplay.textContent = text).catch((error) => poemDisplay.textContent = `Could not fetch verse: ${error}`);</script>" > ".\uscpm.html"
     echo "do"
     start "" ".\uscpm.html"
 )
