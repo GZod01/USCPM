@@ -1,13 +1,28 @@
 <script>
-    window.addEventListener("offline", (event) => {
-        document.body.appendChild(document.createElement('span').innerText='O')
-        onkeydown = (e,f,g) => {}
-    });
-
+    window.addEventListener("offline", (event) => {});
+onkeydown = (e,f,g) => {
+    if (e.keycode == 38){
+        player.style.top ++
+    }
+    if (e.keycode==40){
+        player.style.top --
+    }
+    if (e.keycode==37){
+        player.style.left++
+    }
+    if(e.keycode==39){
+        player.style.left--
+    }
+}
     window.addEventListener("online", (event) => {
         location="http://gzod01.fr/uscpm/"
     });
 </script>
+<span id="player" style="top: 50%;left: 50%;">
+     o 
+    /|\
+    / \
+</span>
 
 <!--<script>
     //let url = 'http://gzod01.fr/uscpm/index.html'; fetch(url).then((response) => {if (!response.ok) {throw new Error(`HTTP error: ${response.status}`);};return response.text();}).then((text) => poemDisplay.textContent = text).catch((error) => poemDisplay.textContent = `Could not fetch verse: ${error}`);
