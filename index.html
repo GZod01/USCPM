@@ -13,9 +13,12 @@
             - <button id="exportthegame">EXPORT levels</button>
             - <input type="file" id="fs">
             - <button id="importthegame">IMPORT levels</button>
+            - <input type="text" name="levelsinput" id=levelsinput>
             <!-- - <button onclick="makeimport()">MakeImport</button>-->
             - using localStorage
             <script>
+                // gzod01.fr
+                //for get level: gzod01.fr/uscpm/index.html?levelsinput=json.tourl(levels)
                 c = a.getContext("2d");
                 localStorage["scpm"] = localStorage["scpm"] || 1;
                 d = 0;
@@ -1989,6 +1992,9 @@
                 }
                 function exportlevel(){
                     download(JSON.stringify(localStorage), 'progression.txt', 'text/plain');
+                }
+                function sharebyurl(){
+                    let theURL = `http://gzod01.fr/uscpm/index.html?levelsinput=${encodeURIComponent(JSON.stringify(levels))}` 
                 }
                 function importlevel(){
                     let thefileelement = document.getElementById('fs')
