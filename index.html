@@ -974,14 +974,24 @@
                         if (c.isPointInPath(x, y)) {
                             location.hash = "";
                             if (t.K == false)
-                                alert("You need to test and I your level first.");
+                                alert("You need to test and win your level first.");
                             else {
-                                open("//www.twitter.com/intent/tweet?text=" + encodeURIComponent("I made a level for #USCPM !\nPlay the game here: http://gzod01.fr/uscpm/. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
-                                    hash: t.hash,
-                                    I: t.I,
-                                    J: t.J
-                                }))));
+                                let choice = prompt('Share on twitter (twi) or get a link (li) to share on other social media: ')
+                                if (choice === 'twi'){
+                                    open("//www.twitter.com/intent/tweet?text=" + encodeURIComponent("I made a level for #USCPM !\nPlay the game here: http://gzod01.fr/uscpm/. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
+                                        hash: t.hash,
+                                        I: t.I,
+                                        J: t.J
+                                    }))));
                                 G = true
+                                }
+                                else if (choice === 'li'){
+                                    open('//gzod01.fr/uscpm/texttoshare.html?text='+ encodeURIComponent("I made a level for #USCPM !\nPlay the game here: http://gzod01.fr/uscpm/. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
+                                        hash: t.hash,
+                                        I: t.I,
+                                        J: t.J
+                                    }))))
+                                }
                             }
                         }
                         c.closePath();
@@ -1262,10 +1272,10 @@
                         }
                         c.fillText("\u25c0", 40, 70);
                         c.fillStyle = "#000";
-                        c.fillText("JS13K LEVELS", 642, 72);
+                        c.fillText("YOUR LEVELS OR DEFAULT LEVELS", 642, 72);
                         c.fillText("TWITTER LEVELS", 642, 472);
                         c.fillStyle = "#fff";
-                        c.fillText("JS13K LEVELS", 640, 70);
+                        c.fillText("YOUR LEVELS OR DEFAULT LEVELS", 640, 70);
                         c.fillText("TWITTER LEVELS", 640, 470);
                         c.fillText("GO", 640, 570);
                         c.fillStyle = "#000";
