@@ -1,0 +1,17 @@
+{ 
+    "enable-yellow": "9", 
+    "disable-yellow": ":", 
+    "time-machhine-top": "F", 
+    "time-machine-bottom": "G", 
+    "brick": "3", 
+    "breakable-brick": "5", 
+    "cloud": "=", 
+    "yellow-button": ";", 
+    "box": "<", 
+    "steel-brick-for-portals": "4", 
+    "flag": "2", 
+    "coins": "6", 
+    "pics": "7", 
+    "moving-platform": "?", 
+    "ice": "8"
+}
