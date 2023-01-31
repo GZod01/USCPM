@@ -13,7 +13,6 @@
             - <button id="exportthegame">EXPORT levels</button>
             - <input type="file" id="fs">
             - <button id="importthegame">IMPORT levels</button>
-            - <input type="text" name="levelsinput" id=levelsinput>
             <!-- - <button onclick="makeimport()">MakeImport</button>-->
             - using localStorage
             <script>
@@ -977,7 +976,7 @@
                             if (t.K == false)
                                 alert("You need to test and I your level first.");
                             else {
-                                open("//www.twitter.com/intent/tweet?text=" + encodeURIComponent("I made a level for #SuperChronoPortalMaker !\nPlay the game here: http://js13kgames.com/entries/super-chrono-portal-maker. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
+                                open("//www.twitter.com/intent/tweet?text=" + encodeURIComponent("I made a level for #USCPM !\nPlay the game here: http://gzod01.fr/uscpm/. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
                                     hash: t.hash,
                                     I: t.I,
                                     J: t.J
@@ -1994,7 +1993,11 @@
                     download(JSON.stringify(localStorage), 'progression.txt', 'text/plain');
                 }
                 function sharebyurl(){
-                    let theURL = `http://gzod01.fr/uscpm/index.html?levelsinput=${encodeURIComponent(JSON.stringify(levels))}` 
+                    let theURL = encodeURI('https://gzod01.fr/uscpm/'+ "#" + JSON.stringify({
+                                    hash: t.hash,
+                                    I: t.I,
+                                    J: t.J
+                                })) 
                 }
                 function importlevel(){
                     let thefileelement = document.getElementById('fs')
