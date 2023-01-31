@@ -1,0 +1,17 @@
+<input type="text" name="text" id="text" onkeyup="showindiv()">
+<div id="content"></div>
+<script>
+    window.onload= function(){
+        if(document.getElementById('text').value ===''){}
+        else{
+            let text = document.getElementById('text').value
+            let ntext = text.replace('\n','<br>')
+            document.getElementById('content').innerHTML = ntext
+        }
+    }
+    function showindiv(){
+        let text = document.getElementById('text').value
+        let ntext = text.replace('\n','<br>')
+        document.getElementById('content').innerHTML = ntext
+    }
+</script>
