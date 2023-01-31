@@ -986,11 +986,17 @@
                                 G = true
                                 }
                                 else if (choice === 'li'){
-                                    open('//gzod01.fr/uscpm/texttoshare.html?text='+ encodeURIComponent("I made a level for #USCPM !\nPlay the game here: http://gzod01.fr/uscpm/. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
+                                    document.body.style.backgroundColor = 'white'
+                                    document.body.innerHTML = "Share this message with your friend: <br> <br> I made a level for #USCPM !<br>Play the game here: http://gzod01.fr/uscpm/. <br>Play my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
                                         hash: t.hash,
                                         I: t.I,
                                         J: t.J
-                                    }))))
+                                    }))
+                                    /*open('//gzod01.fr/uscpm/texttoshare.html?text='+ encodeURIComponent("I made a level for #USCPM !\nPlay the game here: http://gzod01.fr/uscpm/. \nPlay my level here: " + encodeURI(location.origin + location.pathname + "#" + JSON.stringify({
+                                        hash: t.hash,
+                                        I: t.I,
+                                        J: t.J
+                                    }))))*/
                                 }
                             }
                         }
